@@ -1,0 +1,32 @@
+{
+  "clips": [
+    {
+      "id": "void",
+      "frames": 36
+    },
+    {
+      "id": "field",
+      "frames": 36
+    },
+    {
+      "id": "forest",
+      "frames": 36
+    },
+    {
+      "id": "hall",
+      "frames": 36
+    },
+    {
+      "id": "raid",
+      "frames": 36
+    },
+    {
+      "id": "climb",
+      "frames": 36
+    },
+    {
+      "id": "invite",
+      "frames": 36
+    }
+  ]
+}
