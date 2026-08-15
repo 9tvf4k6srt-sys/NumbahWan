@@ -1,0 +1,9 @@
+# QA gate fixtures — local only, never ship to production
+public/brand/founders/rejects/**
+**/rejects/**
+screenshots/**
+.grok/**
+scripts/**
+artifacts/**
+*.pyc
+__pycache__/
