@@ -1,5 +1,5 @@
-# NumbahWan LP (GitHub Pages)
+# NumbahWan LP v4
 
 Live: https://9tvf4k6srt-sys.github.io/NumbahWan/
 
-Bar NumbahWan-LP-v3 — 宣传画 plates + CSS scroll scrub. Parody stamp 搞笑中央 / 非政治宣傳.
+Ultra-real propaganda-era room; RegginA + RegginO dominant hanging portraits (owned likeness). Stamp 搞笑中央 / 非政治宣傳.
