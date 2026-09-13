@@ -5,72 +5,93 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>NumbahWan · 總書記廳 · 12月24日</title>
 <meta name="theme-color" content="#1a120c" />
-<meta name="description" content="NumbahWan 搞笑中央 — 宣傳畫時代會議室。RegginA + RegginO 主掛像。Join Freely。" />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<meta name="description" content="NumbahWan 搞笑中央 — 主席/副主席标准像掛牆。Join Freely。12月24日。" />
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700;900&display=swap" rel="stylesheet" />
 <style>
-:root {
-  --ink: #1a120c;
-  --cream: #f4e8d4;
-  --vermillion: #c41e1e;
-  --gold: #c9a227;
-  --font: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+:root{
+  --ink:#1a120c; --cream:#f4e8d4; --vermillion:#c41e1e; --gold:#c9a227;
+  --font:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;
 }
 *{box-sizing:border-box}
-body{margin:0;font-family:var(--font);background:var(--ink);color:var(--cream);line-height:1.45}
+body{margin:0;font-family:var(--font);background:var(--ink);color:var(--cream);line-height:1.4}
 .stamp{
-  position:fixed;z-index:50;top:0.6rem;right:0.6rem;
-  background:var(--cream);color:var(--vermillion);
-  border:2px solid var(--vermillion);font-weight:900;font-size:0.65rem;
-  line-height:1.2;padding:0.35rem 0.5rem;text-align:center;transform:rotate(3deg);
+  position:fixed;z-index:60;top:.55rem;right:.55rem;
+  background:var(--cream);color:var(--vermillion);border:2px solid var(--vermillion);
+  font-weight:900;font-size:.62rem;line-height:1.15;padding:.3rem .45rem;text-align:center;
+  transform:rotate(3deg);
 }
 .hero{
-  position:relative;min-height:100vh;min-height:100dvh;
-  display:grid;align-items:end;
+  min-height:100vh;min-height:100dvh;
+  display:flex;flex-direction:column;justify-content:flex-start;
+  background:
+    linear-gradient(180deg, rgba(26,18,12,.35), rgba(26,18,12,.92)),
+    url("assets/v4/room-hero.png") center/cover no-repeat;
+  padding:2.75rem .75rem 1.25rem;
 }
-.hero img.room{
-  position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center;
+.banner{
+  align-self:center;background:var(--vermillion);color:var(--gold);
+  font-weight:900;font-size:clamp(.75rem,2.8vw,1rem);
+  padding:.45rem .9rem;border:2px solid var(--gold);margin-bottom:.75rem;text-align:center;
 }
-.hero-scrim{
-  position:relative;z-index:1;
-  background:linear-gradient(transparent 40%, rgba(26,18,12,.92) 100%);
-  padding:1.25rem 1rem 1.5rem;
+.mains{
+  display:grid;grid-template-columns:1fr 1fr;gap:.55rem;
+  width:min(100%,42rem);margin:0 auto;flex:1;align-content:center;
 }
-.hero-scrim h1{margin:0 0 0.35rem;font-size:clamp(1.35rem,4vw,2rem);font-weight:900}
-.hero-scrim p{margin:0 0 0.75rem;font-size:0.95rem;opacity:0.92;max-width:36rem}
-.meta{display:flex;flex-wrap:wrap;gap:0.5rem 1rem;font-size:0.8rem;opacity:0.85;margin-bottom:0.9rem}
+.mains figure{
+  margin:0;background:#0c0805;
+  border:3px solid var(--gold);box-shadow:0 0 0 2px #5a4208, 4px 6px 0 rgba(0,0,0,.45);
+  display:flex;flex-direction:column;
+}
+.mains img{
+  width:100%;aspect-ratio:3/4;object-fit:cover;object-position:center top;display:block;
+  background:#2a2a2a;
+}
+.mains figcaption{
+  padding:.35rem .4rem;font-size:clamp(.65rem,2.5vw,.8rem);font-weight:900;
+  background:rgba(0,0,0,.75);text-align:center;color:var(--gold);
+}
+.scrim{
+  width:min(100%,42rem);margin:.85rem auto 0;
+}
+.scrim h1{margin:0 0 .25rem;font-size:clamp(1.2rem,4.5vw,1.85rem);font-weight:900}
+.scrim p{margin:0 0 .65rem;font-size:.9rem;opacity:.92}
+.meta{display:flex;flex-wrap:wrap;gap:.4rem .85rem;font-size:.78rem;opacity:.88;margin-bottom:.7rem}
 .meta strong{color:var(--gold)}
 .cta{
   display:inline-block;background:var(--vermillion);color:var(--cream);
-  text-decoration:none;font-weight:900;padding:0.65rem 1rem;border:2px solid var(--gold);
+  text-decoration:none;font-weight:900;padding:.6rem .95rem;border:2px solid var(--gold);
 }
 .cta:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
-.panel{
-  max-width:42rem;margin:0 auto;padding:1.5rem 1rem 2.5rem;
-}
-.panel h2{margin:0 0 0.5rem;font-size:1.1rem;font-weight:900;color:var(--gold)}
-.panel ul{margin:0 0 1rem;padding-left:1.1rem;opacity:0.9;font-size:0.95rem}
-.likeness{
-  display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;margin:1rem 0;
-}
-.likeness figure{margin:0;border:2px solid var(--gold);background:#0d0906}
-.likeness img{width:100%;display:block;aspect-ratio:4/5;object-fit:cover;object-position:center top}
-.likeness figcaption{padding:0.4rem 0.5rem;font-size:0.7rem;font-weight:700}
-footer{padding:0 1rem 2rem;font-size:0.7rem;opacity:0.65;max-width:42rem;margin:0 auto}
-@media (max-width:520px){
-  .likeness{grid-template-columns:1fr}
+.panel{max-width:42rem;margin:0 auto;padding:1.25rem .85rem 2rem}
+.panel h2{margin:0 0 .5rem;font-size:1.05rem;font-weight:900;color:var(--gold)}
+.evidence{display:grid;grid-template-columns:1fr 1fr;gap:.65rem}
+.evidence figure{margin:0;border:1px solid #5a4208;background:#0c0805}
+.evidence img{width:100%;display:block;aspect-ratio:3/4;object-fit:cover;object-position:center top}
+.evidence figcaption{padding:.35rem;font-size:.68rem;opacity:.85}
+footer{max-width:42rem;margin:0 auto;padding:0 .85rem 2rem;font-size:.68rem;opacity:.65}
+@media (max-width:420px){
+  .mains{gap:.4rem}
+  .mains figcaption{font-size:.62rem;padding:.28rem}
 }
 </style>
 </head>
 <body>
   <div class="stamp">搞笑中央<br/>非政治宣傳</div>
-
-  <section class="hero" aria-label="總書記廳第一視口">
-    <img class="room" src="assets/v4/room-hero.png" width="1280" height="720" alt="宣傳畫時代會議室：牆上主掛 RegginA（白毛領風衣+$杖+百葉窗墨鏡）與 RegginO（粉髮彩虹澎裙+藍拳套+泰迪），周圍楓葉宣傳畫" />
-    <div class="hero-scrim">
+  <section class="hero" aria-label="總書記廳 — 主席/副主席标准像">
+    <div class="banner">團結緊張嚴肅活潑 · 第一屆中央大會 12月24日</div>
+    <div class="mains">
+      <figure>
+        <img src="assets/v4/formal-reggina-zhuxi.png" width="768" height="1024" alt="總書記 RegginA 标准像：白毛領風衣、百葉窗墨鏡、帶翼美元杖" />
+        <figcaption>總書記 · RegginA</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/v4/formal-reggino-fuzhuxi.png" width="768" height="1024" alt="副書記 RegginO 标准像：粉髮花冠、彩虹澎袖、藍拳套、泰迪" />
+        <figcaption>副書記 · RegginO</figcaption>
+      </figure>
+    </div>
+    <div class="scrim">
       <h1>NumbahWan · 總書記廳</h1>
-      <p>第一視口＝會議室牆面。總書記 / 副書記主掛像主導，不是奶油紙上的小郵票。</p>
+      <p>牆上主掛＝主席 / 副主席<strong>标准像</strong>（半身、淨底）— 不是遊戲 UI 貼進金框。</p>
       <div class="meta">
         <span><strong>大會</strong> 12月24日</span>
         <span><strong>入會</strong> Join Freely</span>
@@ -79,26 +100,19 @@ footer{padding:0 1rem 2rem;font-size:0.7rem;opacity:0.65;max-width:42rem;margin:
       <a class="cta" href="https://numbahwanguild.grok.me/" rel="noopener">想来就来 · Join</a>
     </div>
   </section>
-
   <section class="panel">
-    <h2>主掛像 · 對照用裁切（Evidence）</h2>
-    <div class="likeness">
+    <h2>Evidence · 标准像 stilts（對照 L1/L2 特徵，非原圖貼上）</h2>
+    <div class="evidence">
       <figure>
-        <img src="assets/v4/portrait-reggina-l1.png" alt="RegginA L1 crop from gs-costume" width="420" height="520" />
-        <figcaption>總書記 RegginA · Exact Source refs/gs-costume.jpeg</figcaption>
+        <img src="assets/v4/formal-reggina-zhuxi.png" alt="RegginA formal stilt" />
+        <figcaption>主席像 stilt · traits ← refs/gs-costume.jpeg</figcaption>
       </figure>
       <figure>
-        <img src="assets/v4/portrait-reggino-l2.png" alt="RegginO L2 from reggino.jpg" width="420" height="520" />
-        <figcaption>副書記 RegginO · Exact Source assets/portraits/reggino.jpg</figcaption>
+        <img src="assets/v4/formal-reggino-fuzhuxi.png" alt="RegginO formal stilt" />
+        <figcaption>副主席像 stilt · traits ← portraits/reggino.jpg</figcaption>
       </figure>
     </div>
-    <h2>公會事實</h2>
-    <ul>
-      <li>總書記 RegginA · 副書記 RegginO</li>
-      <li>第一屆中央大會 <strong>12月24日</strong></li>
-      <li>职衔：總書記 / 中央政委 / 黨員 / 預備黨員 · Join Freely</li>
-    </ul>
   </section>
-  <footer>v4 room grammar · likeness HARD GATE in DESIGN.md · Anti-copy grok.me · archive/v3 superseded</footer>
+  <footer>v4 标准像 amend · HARD REJECT #10 UI paste · mobile 2-col both MAIN · AntiSlop KEEP</footer>
 </body>
 </html>
