@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>NumbahWan · 第一屆中央大會 12月24日</title>
+<meta name="theme-color" content="#c41e1e" />
+<meta name="description" content="NumbahWan 搞笑中央 — SUPER RED 公會海報。Join Freely。12月24日大會。" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=IBM+Plex+Mono:wght@600;700&family=Noto+Sans+TC:wght@400;700;900&display=swap" rel="stylesheet" />
+<style>
+:root {
+  --field: #c41e1e;
+  --field-deep: #9b1212;
+  --ink-on-red: #fff8f0;
+  --gold: #f0d060;
+  --n-orange: #ff6a00;
+  --stamp-fg: #c41e1e;
+  --stamp-bg: #fff8f0;
+  --font-zh: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+  --font-display: "Archivo Black", "Arial Black", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+  --radius: 2px;
+  --space-1: 4px;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:auto}
+body{
+  margin:0;
+  background:var(--field);
+  color:var(--ink-on-red);
+  font-family:var(--font-zh);
+  font-size:1rem;
+  line-height:1.4;
+  min-height:100vh;
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+.page{max-width:56rem;margin:0 auto;padding:calc(var(--space-1)*5)}
+.topbar{
+  display:flex;align-items:center;justify-content:space-between;gap:calc(var(--space-1)*3);
+  margin-bottom:calc(var(--space-1)*5);
+}
+.brand{display:flex;align-items:center;gap:calc(var(--space-1)*3)}
+.mark{
+  width:3rem;height:3rem;background:var(--n-orange);color:#1a120c;
+  font-family:var(--font-display);font-size:2rem;line-height:3rem;text-align:center;
+  border:2px solid var(--ink-on-red);box-shadow:3px 3px 0 var(--gold);
+}
+.brand-name{font-family:var(--font-display);font-size:1.25rem;letter-spacing:-0.02em}
+.stamp{
+  background:var(--stamp-bg);color:var(--stamp-fg);
+  font-weight:900;font-size:0.7rem;line-height:1.25;
+  padding:calc(var(--space-1)*2) calc(var(--space-1)*3);
+  border:2px solid var(--ink-on-red);transform:rotate(-3deg);text-align:center;
+}
+.hero{
+  display:grid;gap:calc(var(--space-1)*5);
+  margin-bottom:calc(var(--space-1)*8);
+  align-items:end;
+}
+@media (min-width:720px){
+  .hero{grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);align-items:center}
+}
+.hero-art{
+  position:relative;
+  border:4px solid var(--gold);
+  outline:2px solid var(--ink-on-red);
+  outline-offset:3px;
+  background:var(--field-deep);
+  box-shadow:6px 6px 0 rgba(0,0,0,.25);
+}
+.hero-art img{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:center top}
+.hero-art .rank{
+  position:absolute;top:calc(var(--space-1)*3);left:calc(var(--space-1)*3);
+  background:var(--gold);color:#1a120c;font-weight:900;font-size:0.75rem;
+  padding:calc(var(--space-1)*1) calc(var(--space-1)*3);border:2px solid #1a120c;
+}
+.hero-copy .date{
+  display:inline-block;background:var(--gold);color:#1a120c;
+  font-family:var(--font-mono);font-weight:700;font-size:0.85rem;
+  padding:calc(var(--space-1)*2) calc(var(--space-1)*3);border:2px solid #1a120c;
+  margin-bottom:calc(var(--space-1)*3);
+}
+.hero-copy h1{
+  margin:0 0 calc(var(--space-1)*2);
+  font-size:clamp(2.5rem,10vw,5rem);font-weight:900;line-height:1.05;
+  text-shadow:3px 3px 0 rgba(0,0,0,.2);
+}
+.hero-copy .latin{
+  font-family:var(--font-display);font-size:clamp(1.75rem,6vw,3rem);
+  line-height:0.95;margin:0 0 calc(var(--space-1)*3);color:var(--gold);
+}
+.hero-copy .lede{margin:0 0 calc(var(--space-1)*4);font-size:1.05rem;max-width:28rem}
+.irony{
+  font-family:var(--font-mono);font-size:0.8rem;font-weight:700;
+  border:1px dashed var(--gold);padding:calc(var(--space-1)*2) calc(var(--space-1)*3);
+  margin-bottom:calc(var(--space-1)*4);display:inline-block;
+}
+.meta{
+  display:flex;flex-wrap:wrap;gap:calc(var(--space-1)*2) calc(var(--space-1)*4);
+  font-family:var(--font-mono);font-size:0.8rem;opacity:0.95;
+  border-top:1px solid rgba(255,248,240,.35);padding-top:calc(var(--space-1)*3);
+}
+.meta strong{color:var(--gold)}
+.cta-row{display:flex;flex-wrap:wrap;gap:calc(var(--space-1)*3);margin-top:calc(var(--space-1)*4)}
+.btn{
+  display:inline-block;font-weight:900;text-decoration:none;
+  padding:calc(var(--space-1)*3) calc(var(--space-1)*5);
+  border:2px solid #1a120c;border-radius:var(--radius);transition:opacity 120ms linear;
+}
+.btn:hover{opacity:.92}
+.btn:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.btn-gold{background:var(--gold);color:#1a120c}
+.btn-ghost{background:transparent;color:var(--ink-on-red);border-color:var(--ink-on-red)}
+.staff-strip{
+  display:grid;grid-template-columns:7rem 1fr;gap:calc(var(--space-1)*4);
+  align-items:center;background:var(--field-deep);
+  padding:calc(var(--space-1)*4);margin:calc(var(--space-1)*6) 0;
+  border-left:6px solid var(--gold);
+}
+.staff-strip img{width:100%;border:3px solid var(--gold);display:block}
+.staff-strip h2{margin:0 0 calc(var(--space-1)*2);font-size:1.15rem;font-weight:900}
+.staff-strip p{margin:0;font-size:0.9rem;opacity:.92}
+.roster h2{
+  margin:0 0 calc(var(--space-1)*2);font-size:clamp(1.5rem,4vw,2.25rem);font-weight:900;
+}
+.roster .sub{margin:0 0 calc(var(--space-1)*5);opacity:.9;font-size:0.95rem}
+.grid{
+  list-style:none;margin:0;padding:0;
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(7.75rem,1fr));
+  gap:calc(var(--space-1)*4);
+}
+.frame{display:flex;flex-direction:column;gap:calc(var(--space-1)*2)}
+.pennant{
+  align-self:flex-start;background:var(--gold);color:#1a120c;
+  font-size:0.65rem;font-weight:900;padding:2px 6px;border:1px solid #1a120c;
+}
+.frame.commissar .pennant{background:var(--ink-on-red);color:var(--field)}
+.frame.prep .pennant{background:transparent;color:var(--gold);border:1px solid var(--gold)}
+.frame.hero .pennant{background:var(--n-orange)}
+.art{
+  border:3px solid var(--gold);outline:1px solid var(--ink-on-red);outline-offset:2px;
+  background:#7a0f0f;aspect-ratio:4/5;overflow:hidden;
+}
+.art img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block}
+.who{font-size:0.8rem;font-weight:700;line-height:1.2;word-break:break-word}
+.note{margin-top:calc(var(--space-1)*4);font-size:0.75rem;opacity:.8}
+.cta-band{
+  margin:calc(var(--space-1)*10) 0 calc(var(--space-1)*6);
+  padding:calc(var(--space-1)*6);background:var(--gold);color:#1a120c;
+  border:3px solid #1a120c;box-shadow:5px 5px 0 rgba(0,0,0,.2);
+}
+.cta-band h2{margin:0 0 calc(var(--space-1)*2);font-size:clamp(1.5rem,4vw,2.25rem);font-weight:900}
+.cta-band p{margin:0 0 calc(var(--space-1)*4)}
+.cta-band .btn-gold{background:var(--field);color:var(--ink-on-red);border-color:#1a120c}
+.cta-band .btn-ghost{border-color:#1a120c;color:#1a120c}
+
+.star-seal{
+  width:4.5rem;height:4.5rem;border-radius:50%;
+  background:var(--gold);color:#1a120c;
+  display:grid;place-items:center;text-align:center;
+  font-weight:900;font-size:0.65rem;line-height:1.15;
+  border:3px solid #1a120c;box-shadow:3px 3px 0 rgba(0,0,0,.25);
+  transform:rotate(-8deg);flex-shrink:0;
+}
+.banner{
+  background:var(--field-deep);color:var(--gold);
+  font-weight:900;font-size:clamp(0.85rem,2.5vw,1.1rem);
+  letter-spacing:0.04em;text-align:center;
+  padding:calc(var(--space-1)*3) calc(var(--space-1)*4);
+  border-top:3px solid var(--gold);border-bottom:3px solid var(--gold);
+  margin:0 calc(var(--space-1)*-5) calc(var(--space-1)*6);
+  box-shadow:inset 0 0 0 2px rgba(255,248,240,.15);
+}
+.hero-copy .seals{display:flex;gap:calc(var(--space-1)*3);align-items:center;margin:calc(var(--space-1)*3) 0;flex-wrap:wrap}
+footer.site{
+  border-top:1px solid rgba(255,248,240,.3);padding-top:calc(var(--space-1)*4);
+  font-size:0.7rem;opacity:.85;display:flex;flex-wrap:wrap;gap:calc(var(--space-1)*3);
+  justify-content:space-between;
+}
+</style>
+</head>
+<body>
+<main class="page">
+  <header class="topbar">
+    <div class="brand">
+      <div class="mark" aria-hidden="true">N</div>
+      <div class="brand-name">NumbahWan</div>
+    </div>
+    <div class="stamp">搞笑中央<br/>非政治宣傳<br/>Join Freely</div>
+  </header>
+
+  <div class="banner" role="presentation">★ 紅場海報 · 第一屆中央大會 · 12月24日 · Join Freely ★</div>
+
+  <section class="hero" aria-labelledby="congress">
+    <div class="hero-art">
+      <span class="rank">總書記</span>
+      <img src="assets/portraits/reggina.jpg" alt="總書記 RegginA — shutter shades + staff" width="640" height="800" />
+    </div>
+    <div class="hero-copy">
+      <div class="seals">
+        <div class="star-seal">第一屆<br/>大會<br/>認證</div>
+        <div class="date">12 · 24 · 第一屆</div>
+      </div>
+      <p class="latin">NumbahWan</p>
+      <h1 id="congress">第一屆<br/>中央大會</h1>
+      <p class="lede">公會公告：Numbahwan第一屆中央大會 <strong>12月24日</strong>。到場算黨性；缺席自己跟總書記講。</p>
+      <div class="irony">紅光亮 parody · 向上仰望總書記 · $ 權杖反諷 ON 紅底</div>
+      <div class="meta">
+        <span><strong>Lv</strong> 7</span>
+        <span><strong>成員</strong> 22/30</span>
+        <span><strong>平均</strong> Lv 88</span>
+        <span><strong>遠征</strong> ~#30</span>
+        <span><strong>入會</strong> Join Freely</span>
+      </div>
+      <div class="cta-row">
+        <a class="btn btn-gold" href="#join">想來就來 · Join</a>
+        <a class="btn btn-ghost" href="#committee">中央委員</a>
+      </div>
+    </div>
+  </section>
+
+  <aside class="staff-strip" aria-label="總書記造型反諷">
+    <img src="assets/portraits/owned/reggina-gs-staff.png" alt="RegginA ¾ 持美元杖 + 百葉窗墨鏡（owned crop）" width="260" height="370" />
+    <div>
+      <h2>總書記裝備委員會通報</h2>
+      <p>職稱很紅，裝備很綠：美元杖 + shutter shades。這不是路線鬥爭，是 Maple 造型委員會的集體幽默。（owned ref crop）</p>
+    </div>
+  </aside>
+
+  <section class="roster" id="committee" aria-labelledby="roster-h">
+    <h2 id="roster-h">中央委員 · 紅場肖像</h2>
+    <p class="sub">金框半身 · 職銜三角旗 · 24 張臉對齊 grok.me 能量，但場地是 SUPER RED 海報不是暗黑 UI。</p>
+    <ul class="grid">
+      <li class="frame hero">
+        <div class="pennant">總書記</div>
+        <div class="art"><img src="assets/portraits/reggina.jpg" alt="RegginA" width="320" height="400" loading="lazy" /></div>
+        <div class="who">RegginA</div>
+      </li>
+      <li class="frame commissar">
+        <div class="pennant">中央政委</div>
+        <div class="art"><img src="assets/portraits/belive.jpg" alt="Belive" width="320" height="400" loading="lazy" /></div>
+        <div class="who">Belive</div>
+      </li>
+      <li class="frame member">
+        <div class="pennant">黨員</div>
+        <div class="art"><img src="assets/portraits/aguang.jpg" alt="阿光Yo" width="320" height="400" loading="lazy" /></div>
+        <div class="who">阿光Yo</div>
+      </li>
+      <li class="frame member">
+        <div class="pennant">黨員</div>
+        <div class="art"><img src="assets/portraits/sun.jpg" alt="碼農小孫" width="320" height="400" loading="lazy" /></div>
+        <div class="who">碼農小孫</div>
+      </li>
+      <li class="frame member">
+        <div class="pennant">黨員</div>
+        <div class="art"><img src="assets/portraits/tzxia2.jpg" alt="TZXIA2" width="320" height="400" loading="lazy" /></div>
+        <div class="who">TZXIA2</div>
+      </li>
+      <li class="frame member">
+        <div class="pennant">黨員</div>
+        <div class="art"><img src="assets/portraits/chengze.jpg" alt="怎麼鈕承澤樣" width="320" height="400" loading="lazy" /></div>
+        <div class="who">怎麼鈕承澤樣</div>
+      </li>
+      <li class="frame prep">
+        <div class="pennant">預備黨員</div>
+        <div class="art"><img src="assets/portraits/maniojoja.jpg" alt="MaNiojoja" width="320" height="400" loading="lazy" /></div>
+        <div class="who">MaNiojoja</div>
+      </li>
+      <li class="frame prep">
+        <div class="pennant">預備黨員</div>
+        <div class="art"><img src="assets/portraits/gawd.jpg" alt="Gawd" width="320" height="400" loading="lazy" /></div>
+        <div class="who">Gawd</div>
+      </li>
+      <li class="frame member">
+        <div class="pennant">黨員</div>
+        <div class="art"><img src="assets/portraits/gege.jpg" alt="帥葛葛" width="320" height="400" loading="lazy" /></div>
+        <div class="who">帥葛葛</div>
+      </li>
+      <li class="frame member">
+        <div class="pennant">黨員</div>
+        <div class="art"><img src="assets/portraits/wantao.jpg" alt="萬濤*" width="320" height="400" loading="lazy" /></div>
+        <div class="who">萬濤*</div>
+      </li>
+      <li class="frame member">
+        <div class="pennant">黨員</div>
+        <div class="art"><img src="assets/portraits/yuluner.jpg" alt="雨露*" width="320" height="400" loading="lazy" /></div>
+        <div class="who">雨露*</div>
+      </li>
+      <li class="frame member">
+        <div class="pennant">黨員</div>
+        <div class="art"><img src="assets/portraits/yulunerqing.jpg" alt="雨露青*" width="320" height="400" loading="lazy" /></div>
+        <div class="who">雨露青*</div>
+      </li>
+      <li class="frame member">
+        <div class="pennant">黨員</div>
+        <div class="art"><img src="assets/portraits/shagua.jpg" alt="傻瓜*" width="320" height="400" loading="lazy" /></div>
+        <div class="who">傻瓜*</div>
+      </li>
+      <li class="frame member">
+        <div class="pennant">黨員</div>
+        <div class="art"><img src="assets/portraits/neila.jpg" alt="Neila*" width="320" height="400" loading="lazy" /></div>
+        <div class="who">Neila*</div>
+      </li>
+      <li class="frame member">
+        <div class="pennant">黨員</div>
+        <div class="art"><img src="assets/portraits/queenk.jpg" alt="QueenK*" width="320" height="400" loading="lazy" /></div>
+        <div class="who">QueenK*</div>
+      </li>
+      <li class="frame member">
+        <div class="pennant">黨員</div>
+        <div class="art"><img src="assets/portraits/qniao.jpg" alt="Q鳥*" width="320" height="400" loading="lazy" /></div>
+        <div class="who">Q鳥*</div>
+      </li>
+      <li class="frame member">
+        <div class="pennant">黨員</div>
+        <div class="art"><img src="assets/portraits/heiqi.jpg" alt="黑騎*" width="320" height="400" loading="lazy" /></div>
+        <div class="who">黑騎*</div>
+      </li>
+      <li class="frame member">
+        <div class="pennant">黨員</div>
+        <div class="art"><img src="assets/portraits/guning.jpg" alt="固寧*" width="320" height="400" loading="lazy" /></div>
+        <div class="who">固寧*</div>
+      </li>
+      <li class="frame member">
+        <div class="pennant">黨員</div>
+        <div class="art"><img src="assets/portraits/bingfeng.jpg" alt="冰封*" width="320" height="400" loading="lazy" /></div>
+        <div class="who">冰封*</div>
+      </li>
+      <li class="frame member">
+        <div class="pennant">黨員</div>
+        <div class="art"><img src="assets/portraits/leiyumo.jpg" alt="雷雨*" width="320" height="400" loading="lazy" /></div>
+        <div class="who">雷雨*</div>
+      </li>
+      <li class="frame prep">
+        <div class="pennant">預備黨員</div>
+        <div class="art"><img src="assets/portraits/niojojer.jpg" alt="Niojojer*" width="320" height="400" loading="lazy" /></div>
+        <div class="who">Niojojer*</div>
+      </li>
+      <li class="frame prep">
+        <div class="pennant">預備黨員</div>
+        <div class="art"><img src="assets/portraits/tis36.jpg" alt="TIS36*" width="320" height="400" loading="lazy" /></div>
+        <div class="who">TIS36*</div>
+      </li>
+      <li class="frame member">
+        <div class="pennant">黨員</div>
+        <div class="art"><img src="assets/portraits/reggino.jpg" alt="RegginO*" width="320" height="400" loading="lazy" /></div>
+        <div class="who">RegginO*</div>
+      </li>
+      <li class="frame member">
+        <div class="pennant">黨員</div>
+        <div class="art"><img src="assets/portraits/regginkrad.jpg" alt="RegginKrad*" width="320" height="400" loading="lazy" /></div>
+        <div class="who">RegginKrad*</div>
+      </li>
+    </ul>
+    <p class="note">* 標記者：名字從公會站檔名／頁面推斷，僅作席位標籤。貢獻榜 白two／小白two／小白1 等見遊戲截圖 refs。肖像亦見於 numbahwanguild.grok.me（fair beat）。</p>
+  </section>
+
+  <section class="cta-band" id="join">
+    <h2>12月24日 · Join Freely</h2>
+    <p>想來就來。笑完上線；大會帶角色，不帶綱領。</p>
+    <div class="cta-row">
+      <a class="btn btn-gold" href="https://numbahwanguild.grok.me/" rel="noopener">去公會站加入</a>
+      <a class="btn btn-ghost" href="#congress">記住大會</a>
+    </div>
+  </section>
+
+  <footer class="site">
+    <span>NumbahWan · Maple Idle guild parody · 非政治宣傳</span>
+    <span>DESIGN.md v2 SUPER RED · portraits credit: grok.me + owned refs</span>
+  </footer>
+</main>
+</body>
+</html>
+<!-- preview: v2 SUPER RED — v3 解放前 woodcut redo in progress -->
