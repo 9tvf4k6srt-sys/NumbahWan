@@ -21,7 +21,7 @@ Commune hall → Kerning scrub → Join.
 | Surface | Photoreal wall+挂屏; **inside** = text-free gouache 宣传画 |
 | Motion | Scroll-driven kerning + @supports + reduced-motion |
 | Composition | N+GS+VGS flush hang; slogans only on wall banner not in portraits |
-| Rejects | Slogan-in-portrait; wrong gloves/coat; photoreal grey-mat; A–F |
+| Rejects | G aperture contain-fit (no bleed);  Slogan-in-portrait; wrong gloves/coat; photoreal grey-mat; A–F |
 
 ## RegginA wardrobe checklist (L1 gs-costume HARD)
 - [ ] Cream/off-white fur trench (not black leather / teal dress)
@@ -32,3 +32,6 @@ Commune hall → Kerning scrub → Join.
 - [ ] Winged $ cane + purple grip
 - [ ] Hair anatomical left → almost waist
 - [ ] **No text** inside portrait pane
+
+## Cell G
+Portrait art clipped **inside** 挂屏 glass/mat — continuous molding; no plate-on-frame.
