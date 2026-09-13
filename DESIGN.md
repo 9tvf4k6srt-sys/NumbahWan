@@ -1,33 +1,29 @@
-# DESIGN.md — NumbahWan LP v6
+# DESIGN.md — NumbahWan LP v7
 
-**Foundation:** `5734dd671555a3a34dfc53d0ee2ab86df4edf2bcf64cbfa5cd5a71dc8756949b`  
-**KEEP:** AntiSlop `4aa03b3f…` · Box-Computer-Edge `0c8efe05…` · process A–F  
-**Tone:** 搞笑中央 / 非政治宣傳 · parody not real agitation  
-**Deploy:** Artifact local; Leader may temp-push Pages (no ship claim)
+**Foundation:** `741ff7b9fbe4c92d3e01ec266242f974f51b20a6573d6c19a454ccdf55cb347d`  
+**KEEP:** Process A–F · AntiSlop · Box-Computer-Edge · Kerning scrub · stamp 搞笑中央  
+**SUPERSEDE:** photoreal grey-mat stilts
 
 ## Reader job
-Guildmates scrub from 總書記廳 wall hangings into period-real Kerning City parody, laugh, feel belonging, hit 12/24 Join.
+Open 人民公社 hall → scrub Kerning parody → Join 12/24.
 
-## Exact Sources (≤3 craft)
-1. https://vercel.com/design.md — Motion stillness default; reject decorative motion  
-2. https://developer.chrome.com/docs/css-ui/scroll-driven-animations — sticky scrub + `animation-range` + `@supports`  
-3. https://maplestorywiki.net/w/Kerning_City + urbannext Pyongyang axes + Palace 挂屏 craft (Foundation M1/U1/F1)
+## Exact Sources
+1. chineseposters 《人民公社好》 Rui/Yang + Landsberger Paint it Red  
+2. Owned `refs/v7-style/commune-poster-ref.jpg` + maple-avatar-example-a/b  
+3. Chrome scroll-driven + Palace 挂屏 craft
 
-### 8-slot dissection
-| Slot | From sources → project |
+### 8 slots
+| Slot | Tokens |
 | --- | --- |
-| **Type** | System / Noto Sans TC; display weight 900 for masthead; body ≤0.95rem mobile |
-| **Spacing** | Mobile-first 0.55–0.85rem rhythm; hero scrub sticky 100dvh; section gaps not empty letterbox |
-| **Color** | Ink `#1a120c` · Cream `#f4e8d4` · Vermillion `#c41e1e` · Gold `#c9a227` · scarce neon accents only in Kerning |
-| **Layout** | Hero = full-bleed hall-hero (portraits IN frames); scrub track sticky; CTA after scrub |
-| **Surface** | Photoreal hall wood + 挂屏 glass; Kerning wet concrete / scaffolding — no CSS glassmorphism cards |
-| **Motion** | Scroll-driven opacity crossfade kerning-1→2 via `animation-timeline: scroll()` + `animation-range`; progress bar; `@supports not` stacked stills; `prefers-reduced-motion` = static stack. No bounce/marquee. |
-| **Composition** | Wall triad N + GS + VGS flush hang; scrub axial Kerning boulevard; stamp fixed corner |
-| **Rejects** | A–F process cells; Kerning-misspell class; neon+banner-only; floating portrait cards; gate-list DESIGN; grok.me attire; purple AI mesh; letterbox voids |
+| **Type** | System/Noto Sans TC; weight 900 masthead |
+| **Spacing** | Mobile-first; sticky 100dvh scrub; no empty letterbox as primary mass |
+| **Color** | Ink `#1a120c` · Cream `#f4e8d4` · Vermillion `#c41e1e` · Gold `#c9a227` · commune lime/wood |
+| **Layout** | Hero = commune hall-hero (挂屏 IN wall); scrub Kerning; CTA after |
+| **Surface** | Photoreal commune wall + wood/glass 挂屏; **inside** frames = matte gouache 宣传画 (bold outline, flat heroic color) — not photoreal 3D, not raw pixels |
+| **Motion** | Scroll-driven kerning crossfade + `animation-range` + `@supports` + reduced-motion static stack |
+| **Composition** | N + GS + VGS triad flush hang; slogan banner 人民公社好; stamp corner |
+| **Rejects** | Photoreal grey-mat stilts; raw pixel glue; floating cards; A–F cells; grok.me attire; kepning-class typos |
 
-## Likeness / attire (HARD)
-- RegginA: beautiful Black woman; hair anatomical left→almost waist; winged $ Baller's cane; shades; white fur trench — **owned** `refs/gs-costume.jpeg` + `assets/portraits/reggina.jpg` (**ban grok.me attire**)  
-- RegginO: L2 `assets/portraits/reggino.jpg`  
-
-## HARD REJECTS A–F
-Per Foundation + skills design-taste-antislope / visual-evidence-gate.
+## Likeness HARD (identity)
+RegginA: Black woman; hair left→waist; winged $ cane; shades; fur trench — owned gs-costume + reggina.jpg  
+RegginO: owned reggino.jpg props — **rendered as 宣传画 medium**
