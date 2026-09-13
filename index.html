@@ -43,7 +43,7 @@ body{margin:0;font-family:var(--font);background:var(--ink);color:var(--cream);l
   display:flex;flex-direction:column;
 }
 .mains img{
-  width:100%;aspect-ratio:3/4;object-fit:cover;object-position:center top;display:block;
+  width:100%;aspect-ratio:3/4;object-fit:contain;object-position:center center;display:block;
   background:#2a2a2a;
 }
 .mains figcaption{
@@ -70,8 +70,11 @@ body{margin:0;font-family:var(--font);background:var(--ink);color:var(--cream);l
 .evidence figcaption{padding:.35rem;font-size:.68rem;opacity:.85}
 footer{max-width:42rem;margin:0 auto;padding:0 .85rem 2rem;font-size:.68rem;opacity:.65}
 @media (max-width:420px){
-  .mains{gap:.4rem}
-  .mains figcaption{font-size:.62rem;padding:.28rem}
+  .mains{gap:.3rem;align-content:start}
+  .mains img{aspect-ratio:3/4;object-fit:contain;object-position:center center}
+  .mains figcaption{font-size:.55rem;padding:.22rem}
+  .hero{padding:2.2rem .45rem .75rem}
+  .scrim p{display:none}
 }
 </style>
 </head>
