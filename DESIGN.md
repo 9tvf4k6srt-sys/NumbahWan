@@ -1,29 +1,34 @@
-# DESIGN.md — NumbahWan LP v7
+# DESIGN.md — NumbahWan LP v7.1
 
-**Foundation:** `741ff7b9fbe4c92d3e01ec266242f974f51b20a6573d6c19a454ccdf55cb347d`  
-**KEEP:** Process A–F · AntiSlop · Box-Computer-Edge · Kerning scrub · stamp 搞笑中央  
-**SUPERSEDE:** photoreal grey-mat stilts
+**Foundation:** `e642ba2b6f96477f96936fd6c50c4a62dcedad6d493aeb78b16a8962c786248e`  
+**KEEP:** hand-drawn Maple×宣传画 · 人民公社 · A–F · Kerning · stamp
 
 ## Reader job
-Open 人民公社 hall → scrub Kerning parody → Join 12/24.
+Commune hall → Kerning scrub → Join.
 
 ## Exact Sources
-1. chineseposters 《人民公社好》 Rui/Yang + Landsberger Paint it Red  
-2. Owned `refs/v7-style/commune-poster-ref.jpg` + maple-avatar-example-a/b  
-3. Chrome scroll-driven + Palace 挂屏 craft
+1. `refs/gs-costume.jpeg` wardrobe SoT  
+2. chineseposters / Landsberger 宣传画 medium  
+3. Palace 挂屏 hang + Chrome scroll
 
 ### 8 slots
-| Slot | Tokens |
+| Slot | |
 | --- | --- |
-| **Type** | System/Noto Sans TC; weight 900 masthead |
-| **Spacing** | Mobile-first; sticky 100dvh scrub; no empty letterbox as primary mass |
-| **Color** | Ink `#1a120c` · Cream `#f4e8d4` · Vermillion `#c41e1e` · Gold `#c9a227` · commune lime/wood |
-| **Layout** | Hero = commune hall-hero (挂屏 IN wall); scrub Kerning; CTA after |
-| **Surface** | Photoreal commune wall + wood/glass 挂屏; **inside** frames = matte gouache 宣传画 (bold outline, flat heroic color) — not photoreal 3D, not raw pixels |
-| **Motion** | Scroll-driven kerning crossfade + `animation-range` + `@supports` + reduced-motion static stack |
-| **Composition** | N + GS + VGS triad flush hang; slogan banner 人民公社好; stamp corner |
-| **Rejects** | Photoreal grey-mat stilts; raw pixel glue; floating cards; A–F cells; grok.me attire; kepning-class typos |
+| Type | System/Noto; 900 masthead |
+| Spacing | Mobile-first; sticky scrub 100dvh |
+| Color | Ink/cream/vermillion/gold; commune plaster |
+| Layout | Hall-hero 挂屏 triad; Kerning scrub; CTA |
+| Surface | Photoreal wall+挂屏; **inside** = text-free gouache 宣传画 |
+| Motion | Scroll-driven kerning + @supports + reduced-motion |
+| Composition | N+GS+VGS flush hang; slogans only on wall banner not in portraits |
+| Rejects | Slogan-in-portrait; wrong gloves/coat; photoreal grey-mat; A–F |
 
-## Likeness HARD (identity)
-RegginA: Black woman; hair left→waist; winged $ cane; shades; fur trench — owned gs-costume + reggina.jpg  
-RegginO: owned reggino.jpg props — **rendered as 宣传画 medium**
+## RegginA wardrobe checklist (L1 gs-costume HARD)
+- [ ] Cream/off-white fur trench (not black leather / teal dress)
+- [ ] Black bunny/leaf headband
+- [ ] White shutter shades
+- [ ] Pale/light-blue gloves + **blue** lightning bolt (not white bolt / black gloves)
+- [ ] White sneakers
+- [ ] Winged $ cane + purple grip
+- [ ] Hair anatomical left → almost waist
+- [ ] **No text** inside portrait pane
