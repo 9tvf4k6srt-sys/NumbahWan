@@ -2,120 +2,143 @@
 <html lang="zh-Hant">
 <head>
 <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>NumbahWan · 總書記廳 · 12月24日</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>NumbahWan · 總書記廳</title>
 <meta name="theme-color" content="#1a120c" />
-<meta name="description" content="NumbahWan 搞笑中央 — 主席/副主席标准像掛牆。Join Freely。12月24日。" />
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700;900&display=swap" rel="stylesheet" />
 <style>
 :root{
-  --ink:#1a120c; --cream:#f4e8d4; --vermillion:#c41e1e; --gold:#c9a227;
-  --font:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;
+  --ink:#1a120c; --cream:#f4e8d4; --red:#c41e1e; --gold:#c9a227;
+  --font:system-ui,"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;
 }
 *{box-sizing:border-box}
-body{margin:0;font-family:var(--font);background:var(--ink);color:var(--cream);line-height:1.4}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--font);background:var(--ink);color:var(--cream);line-height:1.35}
 .stamp{
-  position:fixed;z-index:60;top:.55rem;right:.55rem;
-  background:var(--cream);color:var(--vermillion);border:2px solid var(--vermillion);
-  font-weight:900;font-size:.62rem;line-height:1.15;padding:.3rem .45rem;text-align:center;
-  transform:rotate(3deg);
+  position:fixed;z-index:80;top:.4rem;right:.4rem;
+  background:var(--cream);color:var(--red);border:2px solid var(--red);
+  font-weight:900;font-size:.58rem;line-height:1.1;padding:.28rem .4rem;
+  transform:rotate(3deg);text-align:center;
 }
-.hero{
-  min-height:100vh;min-height:100dvh;
-  display:flex;flex-direction:column;justify-content:flex-start;
+/* ——— scrub track ——— */
+.scrub{
+  height:280vh;
+  position:relative;
+}
+.scrub-sticky{
+  position:sticky;top:0;height:100vh;height:100dvh;
+  overflow:hidden;
+  display:grid;grid-template-rows:auto 1fr auto;
+  padding:.55rem .55rem .7rem;
   background:
-    linear-gradient(180deg, rgba(26,18,12,.35), rgba(26,18,12,.92)),
-    url("assets/v4/room-hero.png") center/cover no-repeat;
-  padding:2.75rem .75rem 1.25rem;
+    linear-gradient(180deg, rgba(26,18,12,.55), rgba(26,18,12,.82)),
+    url("assets/v5/hall-base.png") center/cover no-repeat;
 }
 .banner{
-  align-self:center;background:var(--vermillion);color:var(--gold);
-  font-weight:900;font-size:clamp(.75rem,2.8vw,1rem);
-  padding:.45rem .9rem;border:2px solid var(--gold);margin-bottom:.75rem;text-align:center;
+  justify-self:center;background:var(--red);color:var(--gold);
+  font-weight:900;font-size:clamp(.68rem,3.2vw,.95rem);
+  padding:.4rem .7rem;border:2px solid var(--gold);text-align:center;max-width:100%;
 }
-.mains{
-  display:grid;grid-template-columns:1fr 1fr;gap:.55rem;
-  width:min(100%,42rem);margin:0 auto;flex:1;align-content:center;
+.stage{display:grid;align-content:center;gap:.45rem;min-height:0}
+.n-seal{
+  justify-self:center;width:clamp(3.2rem,18vw,5.5rem);aspect-ratio:1;
+  border-radius:50%;background:radial-gradient(circle at 40% 35%,#ff8a3d,#e85d04 55%,#9a3412);
+  border:3px solid var(--gold);box-shadow:0 0 0 2px #5a4208;
+  display:grid;place-items:center;font-weight:900;font-size:clamp(1.4rem,8vw,2.4rem);color:#fff8e7;
 }
-.mains figure{
+.triad{
+  display:grid;grid-template-columns:1fr 1fr;gap:.4rem;width:100%;max-width:42rem;margin:0 auto;
+}
+.triad figure{
   margin:0;background:#0c0805;
-  border:3px solid var(--gold);box-shadow:0 0 0 2px #5a4208, 4px 6px 0 rgba(0,0,0,.45);
-  display:flex;flex-direction:column;
+  border:3px solid var(--gold);box-shadow:0 0 0 2px #5a4208;
+  display:flex;flex-direction:column;min-width:0;
 }
-.mains img{
-  width:100%;aspect-ratio:3/4;object-fit:contain;object-position:center center;display:block;
-  background:#2a2a2a;
+.triad img{
+  width:100%;height:auto;display:block; /* no letterbox voids */
+  vertical-align:middle;
 }
-.mains figcaption{
-  padding:.35rem .4rem;font-size:clamp(.65rem,2.5vw,.8rem);font-weight:900;
-  background:rgba(0,0,0,.75);text-align:center;color:var(--gold);
+.triad figcaption{
+  padding:.32rem .35rem;font-size:clamp(.58rem,2.6vw,.78rem);font-weight:900;
+  background:rgba(0,0,0,.78);color:var(--gold);text-align:center;
 }
-.scrim{
-  width:min(100%,42rem);margin:.85rem auto 0;
-}
-.scrim h1{margin:0 0 .25rem;font-size:clamp(1.2rem,4.5vw,1.85rem);font-weight:900}
-.scrim p{margin:0 0 .65rem;font-size:.9rem;opacity:.92}
-.meta{display:flex;flex-wrap:wrap;gap:.4rem .85rem;font-size:.78rem;opacity:.88;margin-bottom:.7rem}
-.meta strong{color:var(--gold)}
+.footline{font-size:clamp(.72rem,3.2vw,.9rem);font-weight:800;text-align:center;opacity:.95}
 .cta{
-  display:inline-block;background:var(--vermillion);color:var(--cream);
-  text-decoration:none;font-weight:900;padding:.6rem .95rem;border:2px solid var(--gold);
+  display:inline-block;margin:.35rem auto 0;background:var(--red);color:var(--cream);
+  text-decoration:none;font-weight:900;padding:.55rem .85rem;border:2px solid var(--gold);
 }
-.cta:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
-.panel{max-width:42rem;margin:0 auto;padding:1.25rem .85rem 2rem}
-.panel h2{margin:0 0 .5rem;font-size:1.05rem;font-weight:900;color:var(--gold)}
-.evidence{display:grid;grid-template-columns:1fr 1fr;gap:.65rem}
-.evidence figure{margin:0;border:1px solid #5a4208;background:#0c0805}
-.evidence img{width:100%;display:block;aspect-ratio:3/4;object-fit:cover;object-position:center top}
-.evidence figcaption{padding:.35rem;font-size:.68rem;opacity:.85}
-footer{max-width:42rem;margin:0 auto;padding:0 .85rem 2rem;font-size:.68rem;opacity:.65}
-@media (max-width:420px){
-  .mains{gap:.3rem;align-content:start}
-  .mains img{aspect-ratio:3/4;object-fit:contain;object-position:center center}
-  .mains figcaption{font-size:.55rem;padding:.22rem}
-  .hero{padding:2.2rem .45rem .75rem}
-  .scrim p{display:none}
+.progress{
+  position:absolute;left:0;bottom:0;height:3px;background:var(--gold);
+  width:0;animation:scrub-w linear;animation-timeline:scroll();animation-range:0% 100%;
+}
+@keyframes scrub-w{from{width:0}to{width:100%}}
+/* scrub phases via opacity on sticky children */
+.phase{opacity:.35;transform:translateY(8px);transition:opacity .2s linear}
+@supports (animation-timeline: scroll()){
+  .phase-1{animation:in1 linear both;animation-timeline:scroll();animation-range:0% 28%}
+  .phase-2{animation:in2 linear both;animation-timeline:scroll();animation-range:18% 62%}
+  .phase-3{animation:in3 linear both;animation-timeline:scroll();animation-range:52% 100%}
+  @keyframes in1{0%{opacity:.25}40%,100%{opacity:1}}
+  @keyframes in2{0%{opacity:.2}35%,100%{opacity:1}}
+  @keyframes in3{0%{opacity:.15}40%,100%{opacity:1}}
+}
+@supports not (animation-timeline: scroll()){
+  .phase{opacity:1;transform:none}
+}
+@media (prefers-reduced-motion:reduce){
+  .scrub{height:auto}
+  .scrub-sticky{position:relative;height:auto;min-height:100vh}
+  .phase{opacity:1;transform:none;animation:none}
+  .progress{display:none}
+}
+.panel{max-width:42rem;margin:0 auto;padding:1.1rem .7rem 2rem}
+.panel h2{margin:0 0 .45rem;font-size:1rem;color:var(--gold)}
+.panel p{margin:0 0 .7rem;font-size:.88rem;opacity:.92}
+.ev{display:grid;grid-template-columns:1fr;gap:.55rem}
+.ev img{width:100%;height:auto;border:1px solid #5a4208;display:block}
+footer{max-width:42rem;margin:0 auto;padding:0 .7rem 2rem;font-size:.65rem;opacity:.6}
+@media (min-width:720px){
+  .triad{gap:.65rem}
+  .scrub-sticky{padding:1rem 1.25rem}
 }
 </style>
 </head>
 <body>
   <div class="stamp">搞笑中央<br/>非政治宣傳</div>
-  <section class="hero" aria-label="總書記廳 — 主席/副主席标准像">
-    <div class="banner">團結緊張嚴肅活潑 · 第一屆中央大會 12月24日</div>
-    <div class="mains">
-      <figure>
-        <img src="assets/v4/formal-reggina-zhuxi.png" width="768" height="1024" alt="總書記 RegginA 标准像：白毛領風衣、百葉窗墨鏡、帶翼美元杖" />
-        <figcaption>總書記 · RegginA</figcaption>
-      </figure>
-      <figure>
-        <img src="assets/v4/formal-reggino-fuzhuxi.png" width="768" height="1024" alt="副書記 RegginO 标准像：粉髮花冠、彩虹澎袖、藍拳套、泰迪" />
-        <figcaption>副書記 · RegginO</figcaption>
-      </figure>
-    </div>
-    <div class="scrim">
-      <h1>NumbahWan · 總書記廳</h1>
-      <p>牆上主掛＝主席 / 副主席<strong>标准像</strong>（半身、淨底）— 不是遊戲 UI 貼進金框。</p>
-      <div class="meta">
-        <span><strong>大會</strong> 12月24日</span>
-        <span><strong>入會</strong> Join Freely</span>
-        <span><strong>Lv</strong> 7 · 22/30</span>
+
+  <section class="scrub" aria-label="總書記廳 scrub">
+    <div class="scrub-sticky">
+      <div class="banner phase phase-1">團結緊張嚴肅活潑 · 第一屆中央大會 12月24日</div>
+      <div class="stage">
+        <div class="n-seal phase phase-1" aria-label="NumbahWan N emblem">N</div>
+        <div class="triad phase phase-2">
+          <figure>
+            <img src="assets/v5/reggina-zhuxi.png" width="768" height="1024"
+              alt="總書記 RegginA 标准像：左肩及腰金髮、帶翼美元杖、百葉窗墨鏡、白毛領" />
+            <figcaption>總書記 · RegginA</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/v5/reggino-fuzhuxi.png" width="768" height="1024"
+              alt="副書記 RegginO 标准像：粉髮花冠、藍拳套、泰迪" />
+            <figcaption>副書記 · RegginO</figcaption>
+          </figure>
+        </div>
+        <div class="footline phase phase-3">
+          NumbahWan · 總書記廳<br/>
+          <a class="cta" href="https://numbahwanguild.grok.me/" rel="noopener">想来就来 · Join Freely</a>
+        </div>
       </div>
-      <a class="cta" href="https://numbahwanguild.grok.me/" rel="noopener">想来就来 · Join</a>
+      <div class="progress" aria-hidden="true"></div>
     </div>
   </section>
+
   <section class="panel">
-    <h2>Evidence · 标准像 stilts（對照 L1/L2 特徵，非原圖貼上）</h2>
-    <div class="evidence">
-      <figure>
-        <img src="assets/v4/formal-reggina-zhuxi.png" alt="RegginA formal stilt" />
-        <figcaption>主席像 stilt · traits ← refs/gs-costume.jpeg</figcaption>
-      </figure>
-      <figure>
-        <img src="assets/v4/formal-reggino-fuzhuxi.png" alt="RegginO formal stilt" />
-        <figcaption>副主席像 stilt · traits ← portraits/reggino.jpg</figcaption>
-      </figure>
+    <h2>Evidence · hair + Baller's cane</h2>
+    <p>左肩垂至近腰金髮（紅箭頭）+ 帶翼 <strong>$</strong> 杖 — 對照 L1。本地預覽；未推 GitHub。</p>
+    <div class="ev">
+      <img src="shots/likeness-hair-cane-reggina.png" alt="RegginA stilt vs L1 with left-shoulder waist hair arrow" />
+      <img src="shots/likeness-side-reggino-v5.png" alt="RegginO stilt vs L2" />
     </div>
   </section>
-  <footer>v4 标准像 amend · HARD REJECT #10 UI paste · mobile 2-col both MAIN · AntiSlop KEEP</footer>
+  <footer>v5 local-only · Foundation a2890f73… · HARD BAN gh until user OK</footer>
 </body>
 </html>

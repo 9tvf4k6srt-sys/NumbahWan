@@ -1,27 +1,30 @@
-# DESIGN.md — NumbahWan LP v4 (标准像 amend)
+# DESIGN.md — NumbahWan LP v5 (local-only)
 
-**Bar:** NumbahWan-LP-v4 Foundation sha `ad057fc28796c7648293a32abd895e17726f13f8642943cd8073709d7a52cfc4`  
-**Parent KEEP:** `3becbdc6…` room-dominant + likeness traits  
-**KEEP AntiSlop:** `4aa03b3f…`  
-**Tone:** 搞笑中央 / 非政治宣傳
+**Bar:** NumbahWan-LP-v5 Foundation sha `a2890f73373fa72b468876809aa723c9e7fc77b80e8f18344036c27e76d8bc0b`  
+**KEEP:** AntiSlop `4aa03b3f…` · Box-Computer-Edge `0c8efe05…`  
+**Deploy:** local preview only — **HARD BAN** GitHub / gh-pages until user OK.
 
-## Composition
-First viewport = propaganda-era room with **two dominant formal 主席/副主席 hanging portraits** (标准像 treatment). Mobile must keep **BOTH** MAIN portraits readable (2-col DOM frames — not a single photo that side-crops).
+## Reader job
+Guildmates/recruits open a shareable hall page, laugh (搞笑中央), feel belonging, scrub into 12/24 大會 + Join.
 
-## Portrait treatment (主席像)
-Taikang 标准像 grammar: photo/paint → clean bg → bust/half-length → framed hang.  
-L1/L2 = **likeness REFERENCE only** (hair/apparel/props). Never drop unedited Maple/UI still into a frame.
+## Tokens
+- Ink `#1a120c` · Cream `#f4e8d4` · Vermillion `#c41e1e` · Gold `#c9a227` · Panel wood `#3a2a1c`
+- Type: system / Noto Sans TC stack
+- Mobile-first: ~375 first; no giant gray letterbox as primary mass
 
-## Likeness traits (HARD FAIL if miss)
-**RegginA:** blonde fringe · white shutter shades · black ribbon ears · white fur trench · lightning gloves · winged $ staff · white high-tops (if shown) · dark skin  
-**RegginO:** pink waves · rose wreath+lantern · green eyes · rainbow ruffles · blue boxing gloves · teddy+gold · dark skin
+## Wall triad (MAIN)
+1. **N** orange guild emblem (center)  
+2. **RegginA 總書記** 主席像 (left) — hair HARD + Baller's cane HARD  
+3. **RegginO 副書記** 副主席像 (right)
 
-## HARD REJECTS (add #10–11)
-…prior 1–9…  
-10. UI-chrome / raw game still / grass-platform / Cosmet HUD pasted as 主席像  
-11. Full-body game-pose that fails bust/half-length 标准像 format  
+## Hair HARD GATE (RegginA)
+Long blonde down **anatomical left shoulder** to **almost waist**. Short bob / spiky crop = FAIL.
 
-## Assets
-- `assets/v4/formal-reggina-zhuxi.png` · `formal-reggino-fuzhuxi.png` — formal stilts  
-- `assets/v4/room-hero.png` — room composite (desktop atmosphere)  
-- Evidence: stilts vs L1 `refs/gs-costume.jpeg` · L2 `assets/portraits/reggino.jpg`
+## Baller's cane HARD GATE
+Black shaft + **large winged $** (wings on $) from L1 `refs/gs-costume.jpeg`. Medallion disc = FAIL.
+
+## Motion
+CSS scroll-driven scrub (≥3 beats): approach hall → wall triad → 大會 CTA. `prefers-reduced-motion`: static stack.
+
+## HARD REJECTS 1–12
+Per Foundation (hair, cane, letterbox, soft B1, missing triad, no scrub, premature gh, …).
