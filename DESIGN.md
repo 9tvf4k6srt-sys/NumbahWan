@@ -1,30 +1,15 @@
-# DESIGN.md — NumbahWan LP v5 (local-only)
+# DESIGN.md — NumbahWan LP v5 RE-LOOP (woman + in-frame + Kerning)
 
-**Bar:** NumbahWan-LP-v5 Foundation sha `a2890f73373fa72b468876809aa723c9e7fc77b80e8f18344036c27e76d8bc0b`  
-**KEEP:** AntiSlop `4aa03b3f…` · Box-Computer-Edge `0c8efe05…`  
-**Deploy:** local preview only — **HARD BAN** GitHub / gh-pages until user OK.
+**Foundation:** `20a98f0748681c5aee17d0168fc5b56d7be8b4bd67df9b8c46a66aab1e8a2b73`  
+**KEEP:** AntiSlop · Box-Computer-Edge · stamp 搞笑中央/非政治宣傳  
+**Deploy:** local Artifact; Leader may **temp**-push Pages (not permanent ship).
 
-## Reader job
-Guildmates/recruits open a shareable hall page, laugh (搞笑中央), feel belonging, scrub into 12/24 大會 + Join.
+## HARD GATES
+1. RegginA = **beautiful Black woman** (#14) + hair left-shoulder→waist + winged $ Baller's cane + shades + white fur trench  
+2. MAIN portraits **IN wall gold frames** (composited hall-hero) — not floating CSS cards  
+3. Scrub = **Kerning City** Mao+Kim parody (neon/alley/subway/construction)  
+4. Mobile-first — no giant letterbox  
+5. Wall triad: N + GS + VGS  
 
-## Tokens
-- Ink `#1a120c` · Cream `#f4e8d4` · Vermillion `#c41e1e` · Gold `#c9a227` · Panel wood `#3a2a1c`
-- Type: system / Noto Sans TC stack
-- Mobile-first: ~375 first; no giant gray letterbox as primary mass
-
-## Wall triad (MAIN)
-1. **N** orange guild emblem (center)  
-2. **RegginA 總書記** 主席像 (left) — hair HARD + Baller's cane HARD  
-3. **RegginO 副書記** 副主席像 (right)
-
-## Hair HARD GATE (RegginA)
-Long blonde down **anatomical left shoulder** to **almost waist**. Short bob / spiky crop = FAIL.
-
-## Baller's cane HARD GATE
-Black shaft + **large winged $** (wings on $) from L1 `refs/gs-costume.jpeg`. Medallion disc = FAIL.
-
-## Motion
-CSS scroll-driven scrub (≥3 beats): approach hall → wall triad → 大會 CTA. `prefers-reduced-motion`: static stack.
-
-## HARD REJECTS 1–12
-Per Foundation (hair, cane, letterbox, soft B1, missing triad, no scrub, premature gh, …).
+## Assets
+- `assets/v5/reggina-zhuxi.png` · `reggino-fuzhuxi.png` · `hall-hero.png` · `kerning-1.png` · `kerning-2.png`

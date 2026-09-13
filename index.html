@@ -3,142 +3,73 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-<title>NumbahWan · 總書記廳</title>
+<title>NumbahWan · 總書記廳 → Kerning</title>
 <meta name="theme-color" content="#1a120c" />
 <style>
-:root{
-  --ink:#1a120c; --cream:#f4e8d4; --red:#c41e1e; --gold:#c9a227;
-  --font:system-ui,"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;
-}
+:root{--ink:#1a120c;--cream:#f4e8d4;--red:#c41e1e;--gold:#c9a227;--font:system-ui,"Noto Sans TC","PingFang TC",sans-serif}
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
 body{margin:0;font-family:var(--font);background:var(--ink);color:var(--cream);line-height:1.35}
-.stamp{
-  position:fixed;z-index:80;top:.4rem;right:.4rem;
-  background:var(--cream);color:var(--red);border:2px solid var(--red);
-  font-weight:900;font-size:.58rem;line-height:1.1;padding:.28rem .4rem;
-  transform:rotate(3deg);text-align:center;
-}
-/* ——— scrub track ——— */
-.scrub{
-  height:280vh;
-  position:relative;
-}
-.scrub-sticky{
-  position:sticky;top:0;height:100vh;height:100dvh;
-  overflow:hidden;
-  display:grid;grid-template-rows:auto 1fr auto;
-  padding:.55rem .55rem .7rem;
-  background:
-    linear-gradient(180deg, rgba(26,18,12,.55), rgba(26,18,12,.82)),
-    url("assets/v5/hall-base.png") center/cover no-repeat;
-}
-.banner{
-  justify-self:center;background:var(--red);color:var(--gold);
-  font-weight:900;font-size:clamp(.68rem,3.2vw,.95rem);
-  padding:.4rem .7rem;border:2px solid var(--gold);text-align:center;max-width:100%;
-}
-.stage{display:grid;align-content:center;gap:.45rem;min-height:0}
-.n-seal{
-  justify-self:center;width:clamp(3.2rem,18vw,5.5rem);aspect-ratio:1;
-  border-radius:50%;background:radial-gradient(circle at 40% 35%,#ff8a3d,#e85d04 55%,#9a3412);
-  border:3px solid var(--gold);box-shadow:0 0 0 2px #5a4208;
-  display:grid;place-items:center;font-weight:900;font-size:clamp(1.4rem,8vw,2.4rem);color:#fff8e7;
-}
-.triad{
-  display:grid;grid-template-columns:1fr 1fr;gap:.4rem;width:100%;max-width:42rem;margin:0 auto;
-}
-.triad figure{
-  margin:0;background:#0c0805;
-  border:3px solid var(--gold);box-shadow:0 0 0 2px #5a4208;
-  display:flex;flex-direction:column;min-width:0;
-}
-.triad img{
-  width:100%;height:auto;display:block; /* no letterbox voids */
-  vertical-align:middle;
-}
-.triad figcaption{
-  padding:.32rem .35rem;font-size:clamp(.58rem,2.6vw,.78rem);font-weight:900;
-  background:rgba(0,0,0,.78);color:var(--gold);text-align:center;
-}
-.footline{font-size:clamp(.72rem,3.2vw,.9rem);font-weight:800;text-align:center;opacity:.95}
-.cta{
-  display:inline-block;margin:.35rem auto 0;background:var(--red);color:var(--cream);
-  text-decoration:none;font-weight:900;padding:.55rem .85rem;border:2px solid var(--gold);
-}
-.progress{
-  position:absolute;left:0;bottom:0;height:3px;background:var(--gold);
-  width:0;animation:scrub-w linear;animation-timeline:scroll();animation-range:0% 100%;
-}
-@keyframes scrub-w{from{width:0}to{width:100%}}
-/* scrub phases via opacity on sticky children */
-.phase{opacity:.35;transform:translateY(8px);transition:opacity .2s linear}
-@supports (animation-timeline: scroll()){
-  .phase-1{animation:in1 linear both;animation-timeline:scroll();animation-range:0% 28%}
-  .phase-2{animation:in2 linear both;animation-timeline:scroll();animation-range:18% 62%}
-  .phase-3{animation:in3 linear both;animation-timeline:scroll();animation-range:52% 100%}
-  @keyframes in1{0%{opacity:.25}40%,100%{opacity:1}}
-  @keyframes in2{0%{opacity:.2}35%,100%{opacity:1}}
-  @keyframes in3{0%{opacity:.15}40%,100%{opacity:1}}
-}
-@supports not (animation-timeline: scroll()){
-  .phase{opacity:1;transform:none}
+.stamp{position:fixed;z-index:90;top:.4rem;right:.4rem;background:var(--cream);color:var(--red);border:2px solid var(--red);font-weight:900;font-size:.55rem;line-height:1.1;padding:.26rem .38rem;transform:rotate(3deg);text-align:center}
+.hero{min-height:100vh;min-height:100dvh;display:flex;flex-direction:column;justify-content:flex-end;position:relative;
+  background:#0c0805 url("assets/v5/hall-hero.png") center 28%/cover no-repeat}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(26,18,12,.88));pointer-events:none}
+.hero-inner{position:relative;z-index:1;padding:.7rem .7rem 1.1rem;max-width:42rem;width:100%;margin:0 auto}
+.banner{display:inline-block;background:var(--red);color:var(--gold);font-weight:900;font-size:clamp(.65rem,3vw,.9rem);padding:.35rem .65rem;border:2px solid var(--gold);margin-bottom:.45rem}
+.hero h1{margin:0 0 .25rem;font-size:clamp(1.15rem,5vw,1.75rem);font-weight:900}
+.hero p{margin:0 0 .55rem;font-size:clamp(.78rem,3.2vw,.92rem);opacity:.95}
+.cta{display:inline-block;background:var(--red);color:var(--cream);text-decoration:none;font-weight:900;padding:.5rem .8rem;border:2px solid var(--gold)}
+/* Kerning scrub */
+.scrub-label{padding:.85rem .7rem .35rem;font-weight:900;color:var(--gold);font-size:.85rem;text-align:center}
+.scrub{height:220vh;position:relative}
+.scrub-sticky{position:sticky;top:0;height:100vh;height:100dvh;overflow:hidden}
+.scrub-sticky img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0}
+.scrub-sticky img.k1{opacity:1;animation:k1 linear both;animation-timeline:scroll();animation-range:0% 55%}
+.scrub-sticky img.k2{animation:k2 linear both;animation-timeline:scroll();animation-range:35% 100%}
+@keyframes k1{0%,55%{opacity:1}80%,100%{opacity:0}}
+@keyframes k2{0%{opacity:0}40%,100%{opacity:1}}
+@supports not (animation-timeline:scroll()){
+  .scrub{height:auto}
+  .scrub-sticky{position:relative;height:auto;display:grid;gap:.4rem;padding:.5rem}
+  .scrub-sticky img{position:relative;inset:auto;height:auto;opacity:1;max-height:70vh}
 }
 @media (prefers-reduced-motion:reduce){
   .scrub{height:auto}
-  .scrub-sticky{position:relative;height:auto;min-height:100vh}
-  .phase{opacity:1;transform:none;animation:none}
-  .progress{display:none}
+  .scrub-sticky{position:relative;height:auto;display:grid;gap:.4rem;padding:.5rem}
+  .scrub-sticky img{position:relative;height:auto;opacity:1;animation:none;max-height:70vh}
 }
-.panel{max-width:42rem;margin:0 auto;padding:1.1rem .7rem 2rem}
-.panel h2{margin:0 0 .45rem;font-size:1rem;color:var(--gold)}
-.panel p{margin:0 0 .7rem;font-size:.88rem;opacity:.92}
-.ev{display:grid;grid-template-columns:1fr;gap:.55rem}
-.ev img{width:100%;height:auto;border:1px solid #5a4208;display:block}
-footer{max-width:42rem;margin:0 auto;padding:0 .7rem 2rem;font-size:.65rem;opacity:.6}
-@media (min-width:720px){
-  .triad{gap:.65rem}
-  .scrub-sticky{padding:1rem 1.25rem}
-}
+.cap{padding:.6rem .7rem 1.2rem;text-align:center;font-size:.82rem}
+.cap strong{color:var(--gold)}
+.panel{max-width:42rem;margin:0 auto;padding:1rem .7rem 2rem}
+.panel h2{margin:0 0 .4rem;font-size:1rem;color:var(--gold)}
+.ev img{width:100%;height:auto;display:block;border:1px solid #5a4208;margin-bottom:.5rem}
+footer{padding:0 .7rem 2rem;font-size:.62rem;opacity:.55;max-width:42rem;margin:0 auto}
 </style>
 </head>
 <body>
   <div class="stamp">搞笑中央<br/>非政治宣傳</div>
 
-  <section class="scrub" aria-label="總書記廳 scrub">
-    <div class="scrub-sticky">
-      <div class="banner phase phase-1">團結緊張嚴肅活潑 · 第一屆中央大會 12月24日</div>
-      <div class="stage">
-        <div class="n-seal phase phase-1" aria-label="NumbahWan N emblem">N</div>
-        <div class="triad phase phase-2">
-          <figure>
-            <img src="assets/v5/reggina-zhuxi.png" width="768" height="1024"
-              alt="總書記 RegginA 标准像：左肩及腰金髮、帶翼美元杖、百葉窗墨鏡、白毛領" />
-            <figcaption>總書記 · RegginA</figcaption>
-          </figure>
-          <figure>
-            <img src="assets/v5/reggino-fuzhuxi.png" width="768" height="1024"
-              alt="副書記 RegginO 标准像：粉髮花冠、藍拳套、泰迪" />
-            <figcaption>副書記 · RegginO</figcaption>
-          </figure>
-        </div>
-        <div class="footline phase phase-3">
-          NumbahWan · 總書記廳<br/>
-          <a class="cta" href="https://numbahwanguild.grok.me/" rel="noopener">想来就来 · Join Freely</a>
-        </div>
-      </div>
-      <div class="progress" aria-hidden="true"></div>
+  <section class="hero" aria-label="總書記廳 — 牆框內主席/副主席像">
+    <div class="hero-inner">
+      <div class="banner">團結緊張嚴肅活潑 · 中央大會 12月24日</div>
+      <h1>NumbahWan · 總書記廳</h1>
+      <p>N 徽 + 牆上金框內掛像（總書記 / 副書記）— 不是浮卡。</p>
+      <a class="cta" href="#kerning">下滾進入 Kerning City →</a>
     </div>
   </section>
 
-  <section class="panel">
-    <h2>Evidence · hair + Baller's cane</h2>
-    <p>左肩垂至近腰金髮（紅箭頭）+ 帶翼 <strong>$</strong> 杖 — 對照 L1。本地預覽；未推 GitHub。</p>
-    <div class="ev">
-      <img src="shots/likeness-hair-cane-reggina.png" alt="RegginA stilt vs L1 with left-shoulder waist hair arrow" />
-      <img src="shots/likeness-side-reggino-v5.png" alt="RegginO stilt vs L2" />
+  <p class="scrub-label" id="kerning">Kerning City · 毛/金風格戲仿（neon · alley · subway · construction）</p>
+  <section class="scrub" aria-label="Kerning City scrub">
+    <div class="scrub-sticky">
+      <img class="k1" src="assets/v5/kerning-1.png" width="1280" height="720" alt="Kerning City parody: neon alley, subway under construction, thief graffiti" />
+      <img class="k2" src="assets/v5/kerning-2.png" width="1280" height="720" alt="Kerning City parody: thieves hideout, station closed, night market neon" />
     </div>
   </section>
-  <footer>v5 local-only · Foundation a2890f73… · HARD BAN gh until user OK</footer>
+  <p class="cap"><strong>第一屆中央大會 12月24日</strong> · Join Freely · <a class="cta" href="https://numbahwanguild.grok.me/" rel="noopener">想来就来</a></p>
+
+  <section class="panel">
+    <h2>Evidence · likeness (woman + hair + cane)</h2>
+    <img src="shots/likeness-hair-cane-reggina.png" alt="RegginA woman stilt vs L1 with hair/cane callouts" />
+  </section>
+  <footer>v5 RE-LOOP · Foundation 20a98f07… · temp Pages by Leader only · no ship claim</footer>
 </body>
 </html>
