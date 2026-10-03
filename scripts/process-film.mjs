@@ -6,7 +6,7 @@ import { spawnSync } from "node:child_process";
 import { mkdirSync, copyFileSync, writeFileSync, readdirSync } from "node:fs";
 import { join } from "node:path";
 
-const ROOT = "/workspace";
+const _ROOT = "/workspace";
 const VIDEOS = "/workspace/artifacts/imagine_videos";
 const IMAGES = "/workspace/artifacts/imagine_images";
 const OUT = "/workspace/public/film";

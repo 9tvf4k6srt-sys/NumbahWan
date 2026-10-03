@@ -9,13 +9,7 @@ function band(p: number, a: number, b: number, c: number, d: number): number {
   return 1;
 }
 
-export function Overlays({
-  progress,
-  veil,
-}: {
-  progress: number;
-  veil: number;
-}) {
+export function Overlays({ progress, veil }: { progress: number; veil: number }) {
   const hint = progress < 0.03 ? 1 - progress / 0.03 : 0;
   const stats = band(progress, 0.395, 0.42, 0.47, 0.505);
   const fade = 1 - veil;
@@ -76,10 +70,7 @@ export function Overlays({
               >
                 {cue.zh}
               </h2>
-              <p
-                className="mt-2 font-display text-base text-mist sm:text-xl"
-                lang="en"
-              >
+              <p className="mt-2 font-display text-base text-mist sm:text-xl" lang="en">
                 {cue.en}
               </p>
             </div>

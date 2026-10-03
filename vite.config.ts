@@ -146,11 +146,17 @@ export default defineConfig(({ command }) => ({
     ...(command === "build"
       ? [
           nitro({
-            preset: "vercel",
+            // Vercel by default; `NITRO_PRESET=node-server` produces a
+            // standalone `.output/server/index.mjs` for local prod runs + CI.
+            preset: process.env.NITRO_PRESET || "vercel",
             // Auto-registers server/middleware/* (the PWA install page +
             // manifest + head-tag middleware). Nitro v3 defaults serverDir to
             // false, so removing this silently unwires /?install=1 on deploys.
             serverDir: "./server",
+            // PGLite loads pglite.wasm / pglite.data from disk next to its JS.
+            // Bundling inlines the JS but drops those binaries (ENOENT at
+            // runtime), so trace it as a real package instead.
+            traceDeps: ["@electric-sql/pglite*"],
           }),
         ]
       : []),

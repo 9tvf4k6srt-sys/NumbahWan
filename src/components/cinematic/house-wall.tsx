@@ -65,17 +65,11 @@ export function HouseWall({ onJoin }: HouseWallProps) {
             </span>
           </p>
         </div>
-        <p className="font-display text-lg font-bold text-fog tabular-nums">
-          {memberCards.length}
-        </p>
+        <p className="font-display text-lg font-bold text-fog tabular-nums">{memberCards.length}</p>
       </div>
 
       <div className="relative">
-        <div
-          ref={scrollerRef}
-          data-carousel-track="1"
-          className="member-track"
-        >
+        <div ref={scrollerRef} data-carousel-track="1" className="member-track">
           {memberCards.map((m, i) => (
             <article
               key={m.slug}
@@ -162,10 +156,7 @@ export function HouseWall({ onJoin }: HouseWallProps) {
         </span>
       </p>
 
-      <div
-        data-member-rail="1"
-        className="member-rail mt-3 px-5 pb-2 sm:px-8"
-      >
+      <div data-member-rail="1" className="member-rail mt-3 px-5 pb-2 sm:px-8">
         {memberCards.map((m, i) => (
           <button
             key={m.slug}

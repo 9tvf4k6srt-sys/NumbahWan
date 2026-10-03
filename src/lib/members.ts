@@ -12,10 +12,7 @@ const ART_V = "3";
 const art = (slug: string) => `/brand/portraits/${slug}.jpg?v=${ART_V}`;
 const thumb = (slug: string) => `/brand/portraits/thumbs/${slug}.jpg?v=${ART_V}`;
 
-const extra: Record<
-  string,
-  { captionZh: string; captionEn: string; hook: string }
-> = {
+const extra: Record<string, { captionZh: string; captionEn: string; hook: string }> = {
   reggina: {
     captionZh: "八隻手，還是她說了算。",
     captionEn: "Eight arms. Still her call.",

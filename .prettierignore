@@ -1,0 +1,7 @@
+src/routeTree.gen.ts
+node_modules
+.vercel
+.output
+dist
+package-lock.json
+public

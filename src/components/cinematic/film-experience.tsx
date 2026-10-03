@@ -104,13 +104,7 @@ export function FilmExperience() {
   const openJoin = () => setJoinOpen(true);
 
   if (reduced) {
-    return (
-      <ReducedFilm
-        onJoin={openJoin}
-        joinOpen={joinOpen}
-        onClose={() => setJoinOpen(false)}
-      />
-    );
+    return <ReducedFilm onJoin={openJoin} joinOpen={joinOpen} onClose={() => setJoinOpen(false)} />;
   }
 
   return (
@@ -119,10 +113,7 @@ export function FilmExperience() {
       <FilmVideo progress={progress} onReady={onFilmReady} />
       <div className="grain z-10" />
       <div className="vignette z-10" />
-      <div
-        className="pointer-events-none fixed inset-0 z-[15] bg-void"
-        style={{ opacity: veil }}
-      />
+      <div className="pointer-events-none fixed inset-0 z-[15] bg-void" style={{ opacity: veil }} />
       <LeafField intensity={ready ? leafIntensity : 0} />
       <Overlays progress={progress} veil={veil} />
       <Hud progress={progress} onJoin={openJoin} veil={veil} />
@@ -146,15 +137,9 @@ function ReducedFilm({
     <div id="top" className="bg-void text-fog">
       <Hud progress={0} onJoin={onJoin} />
       <div className="space-y-0 pt-16">
-        {CLIPS.filter(
-          (c, i, arr) => arr.findIndex((x) => x.act === c.act) === i,
-        ).map((clip) => (
+        {CLIPS.filter((c, i, arr) => arr.findIndex((x) => x.act === c.act) === i).map((clip) => (
           <section key={clip.id} className="relative min-h-[70dvh]">
-            <img
-              src={clip.still}
-              alt=""
-              className="absolute inset-0 h-full w-full object-cover"
-            />
+            <img src={clip.still} alt="" className="absolute inset-0 h-full w-full object-cover" />
             <div className="absolute inset-0 bg-void/45" />
           </section>
         ))}

@@ -16,14 +16,9 @@ export function Hud({ progress, onJoin, veil = 0 }: HudProps) {
   return (
     <header className="pointer-events-none fixed inset-x-0 top-0 z-40">
       <div className="flex items-center justify-between px-4 pt-[max(0.75rem,env(safe-area-inset-top))] pb-3 sm:px-7">
-        <a
-          href="#top"
-          className="pointer-events-auto flex items-center gap-2.5 rounded-pill pr-3"
-        >
+        <a href="#top" className="pointer-events-auto flex items-center gap-2.5 rounded-pill pr-3">
           <Emblem className="size-8 sm:size-9" glow />
-          <span className="font-display text-sm font-bold text-fog">
-            {guild.name}
-          </span>
+          <span className="font-display text-sm font-bold text-fog">{guild.name}</span>
         </a>
         <div className="pointer-events-auto flex items-center gap-2">
           <a

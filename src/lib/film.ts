@@ -10,15 +10,7 @@
  * Floor: 24fps. We never call play() — only seek — so iOS won't block.
  */
 
-export type ClipId =
-  | "void"
-  | "orbit"
-  | "field"
-  | "forest"
-  | "hall"
-  | "raid"
-  | "climb"
-  | "invite";
+export type ClipId = "void" | "orbit" | "field" | "forest" | "hall" | "raid" | "climb" | "invite";
 
 export type Clip = {
   id: ClipId;
@@ -144,8 +136,7 @@ export function sampleFilm(progress: number): {
   time: number;
 } {
   const p = clamp01(progress);
-  const clip =
-    WINDOWS.find((w) => p < w.end) ?? WINDOWS[WINDOWS.length - 1]!;
+  const clip = WINDOWS.find((w) => p < w.end) ?? WINDOWS[WINDOWS.length - 1]!;
   const idx = WINDOWS.indexOf(clip);
   const next = WINDOWS[idx + 1] ?? null;
   const span = Math.max(0.0001, clip.end - clip.start);
@@ -233,8 +224,7 @@ export const CUES: Cue[] = [
 export function cueOpacity(cue: Cue, p: number): number {
   if (p <= cue.start || p >= cue.end) return 0;
   if (p < cue.peakIn) return easeOut((p - cue.start) / (cue.peakIn - cue.start));
-  if (p > cue.peakOut)
-    return 1 - easeIn((p - cue.peakOut) / (cue.end - cue.peakOut));
+  if (p > cue.peakOut) return 1 - easeIn((p - cue.peakOut) / (cue.end - cue.peakOut));
   return 1;
 }
 

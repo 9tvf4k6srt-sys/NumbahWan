@@ -11,10 +11,7 @@ type HallProps = {
 export function Hall({ onJoin }: HallProps) {
   const xp = Math.round((guild.xp / guild.xpMax) * 100);
   return (
-    <section
-      id="join"
-      className="relative z-30 bg-void pt-10 pb-16 sm:pt-14 sm:pb-20"
-    >
+    <section id="join" className="relative z-30 bg-void pt-10 pb-16 sm:pt-14 sm:pb-20">
       <div className="mx-auto max-w-5xl px-5 sm:px-10">
         <div className="flex flex-col items-start gap-6 md:flex-row md:items-end md:justify-between">
           <div>
@@ -65,9 +62,7 @@ export function Hall({ onJoin }: HallProps) {
                   {en}
                 </span>
               </p>
-              <p className="mt-1 font-display text-lg font-bold text-fog tabular-nums">
-                {v}
-              </p>
+              <p className="mt-1 font-display text-lg font-bold text-fog tabular-nums">{v}</p>
             </div>
           ))}
         </div>
@@ -93,12 +88,7 @@ export function Hall({ onJoin }: HallProps) {
         </div>
 
         <div className="mt-5 max-w-md">
-          <VitalBars
-            hp={guild.xp}
-            hpMax={guild.xpMax}
-            mp={guild.members}
-            mpMax={guild.capacity}
-          />
+          <VitalBars hp={guild.xp} hpMax={guild.xpMax} mp={guild.members} mpMax={guild.capacity} />
         </div>
 
         <div className="mt-12 flex flex-col items-start gap-5 rounded-3xl bg-ink px-6 py-8 shadow-[0_0_0_1px_rgb(255_255_255_/_0.08)] sm:flex-row sm:items-center sm:justify-between sm:px-10">

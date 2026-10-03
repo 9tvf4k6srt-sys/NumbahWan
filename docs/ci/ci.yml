@@ -1,0 +1,85 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    name: Typecheck · Lint · Test · Build
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          lfs: false
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - run: npm ci
+
+      - name: Typecheck
+        run: npm run typecheck
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Format
+        run: npm run format:check
+
+      - name: Unit tests (with coverage)
+        run: npx vitest run --coverage
+
+      - name: Tooling tests
+        run: npm run test:tools
+
+      - name: Production build
+        # DATABASE_URL is intentionally unset: migrations are skipped and the
+        # app falls back to embedded PGLite, so CI needs no secrets.
+        run: npx vite build
+
+  e2e:
+    name: E2E smoke (production build, real browser)
+    needs: verify
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - run: npm ci
+
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+
+      - name: Build standalone Node server
+        run: npm run build:node
+
+      - name: Start server
+        run: |
+          PORT=8080 HOST=127.0.0.1 node .output/server/index.mjs > server.log 2>&1 &
+          npx --yes wait-on@8 --timeout 60000 http-get://127.0.0.1:8080/
+
+      - name: Run E2E smoke
+        run: npm run test:e2e
+
+      - name: Upload failure artifacts
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: e2e-failure
+          path: |
+            e2e-failure.png
+            server.log
