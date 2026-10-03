@@ -1,7 +1,8 @@
-import { useState, type FormEvent } from "react";
+import { useEffect, useRef, useState, type FormEvent } from "react";
 import { classes, copy } from "@/lib/copy";
 import { guild } from "@/lib/guild";
 import { submitJoin } from "@/lib/join";
+import { JOIN_LIMITS } from "@/lib/join-schema";
 import { Emblem } from "./emblem";
 
 type JoinPanelProps = {
@@ -13,10 +14,35 @@ export function JoinPanel({ open, onClose }: JoinPanelProps) {
   const [ign, setIgn] = useState("");
   const [cls, setCls] = useState<string>(classes[0].id);
   const [note, setNote] = useState("");
-  const [status, setStatus] = useState<"idle" | "sending" | "done" | "err">(
-    "idle",
-  );
+  const [status, setStatus] = useState<"idle" | "sending" | "done" | "err">("idle");
   const [error, setError] = useState("");
+  const dialogRef = useRef<HTMLElement>(null);
+  // The parent re-renders every animation frame (scroll progress), so keep the
+  // latest onClose in a ref instead of re-running the effect on each render.
+  const onCloseRef = useRef(onClose);
+  onCloseRef.current = onClose;
+
+  // Accessible modal: Escape closes, focus moves into the dialog on open and
+  // is restored to whatever opened it on close.
+  useEffect(() => {
+    if (!open) return;
+    const opener = document.activeElement as HTMLElement | null;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") onCloseRef.current();
+    };
+    window.addEventListener("keydown", onKey);
+    const id = window.setTimeout(() => {
+      const root = dialogRef.current;
+      const target =
+        root?.querySelector<HTMLElement>("input") ?? root?.querySelector<HTMLElement>("button");
+      target?.focus();
+    }, 50);
+    return () => {
+      window.removeEventListener("keydown", onKey);
+      window.clearTimeout(id);
+      opener?.focus?.();
+    };
+  }, [open]);
 
   async function onSubmit(e: FormEvent) {
     e.preventDefault();
@@ -34,9 +60,7 @@ export function JoinPanel({ open, onClose }: JoinPanelProps) {
   return (
     <div
       className={
-        open
-          ? "pointer-events-auto fixed inset-0 z-50"
-          : "pointer-events-none fixed inset-0 z-50"
+        open ? "pointer-events-auto fixed inset-0 z-50" : "pointer-events-none fixed inset-0 z-50"
       }
       aria-hidden={!open}
     >
@@ -49,11 +73,11 @@ export function JoinPanel({ open, onClose }: JoinPanelProps) {
       />
       <aside
         className={`absolute inset-x-0 bottom-0 max-h-[92dvh] overflow-y-auto rounded-t-3xl bg-ink px-5 pt-4 pb-[max(1.25rem,env(safe-area-inset-bottom))] shadow-[0_-20px_80px_rgb(0_0_0_/_0.55)] transition-[transform,opacity] duration-300 ease-out sm:inset-x-auto sm:left-1/2 sm:w-[28rem] sm:max-h-[min(88dvh,720px)] sm:-translate-x-1/2 ${
-          open
-            ? "translate-y-0 opacity-100"
-            : "pointer-events-none translate-y-[110%] opacity-0"
+          open ? "translate-y-0 opacity-100" : "pointer-events-none translate-y-[110%] opacity-0"
         }`}
+        ref={dialogRef}
         role="dialog"
+        aria-modal="true"
         aria-labelledby="join-title"
       >
         <div className="mx-auto mb-4 h-1 w-10 rounded-pill bg-fog/20 sm:hidden" />
@@ -83,11 +107,7 @@ export function JoinPanel({ open, onClose }: JoinPanelProps) {
             aria-label={copy.closeZh}
           >
             <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true">
-              <path
-                d="M3 3l10 10M13 3L3 13"
-                stroke="currentColor"
-                strokeWidth="1.6"
-              />
+              <path d="M3 3l10 10M13 3L3 13" stroke="currentColor" strokeWidth="1.6" />
             </svg>
           </button>
         </div>
@@ -118,8 +138,8 @@ export function JoinPanel({ open, onClose }: JoinPanelProps) {
               </span>
               <input
                 required
-                minLength={2}
-                maxLength={24}
+                minLength={JOIN_LIMITS.ignMin}
+                maxLength={JOIN_LIMITS.ignMax}
                 value={ign}
                 onChange={(e) => setIgn(e.target.value)}
                 placeholder="IGN"
@@ -158,7 +178,7 @@ export function JoinPanel({ open, onClose }: JoinPanelProps) {
                 value={note}
                 onChange={(e) => setNote(e.target.value)}
                 rows={3}
-                maxLength={280}
+                maxLength={JOIN_LIMITS.noteMax}
                 placeholder={copy.optionalZh}
                 className="mt-1.5 w-full resize-none rounded-xl bg-void px-4 py-3 font-cjk text-base text-fog outline-none ring-1 ring-white/10 focus:ring-2 focus:ring-ember"
               />

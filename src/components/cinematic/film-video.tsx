@@ -13,13 +13,7 @@ import { CLIPS, sampleFilm } from "@/lib/film";
  * 8. Void clip paints the EXACT brand N on top and crash-zooms it with
  *    scroll. A still letter with falling leaves is not a first shot.
  */
-export function FilmVideo({
-  progress,
-  onReady,
-}: {
-  progress: number;
-  onReady?: () => void;
-}) {
+export function FilmVideo({ progress, onReady }: { progress: number; onReady?: () => void }) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const poolRef = useRef<(HTMLVideoElement | null)[]>([]);
   const progressRef = useRef(progress);
@@ -195,21 +189,11 @@ export function FilmVideo({
       if (warmedIdxRef.current === idx) return;
       warmedIdxRef.current = idx;
       const prev = pool[idx - 1];
-      if (
-        prev &&
-        !prev.seeking &&
-        Number.isFinite(prev.duration) &&
-        prev.duration > 0
-      ) {
+      if (prev && !prev.seeking && Number.isFinite(prev.duration) && prev.duration > 0) {
         seekLatest(prev, idx - 1, prev.duration - 0.08);
       }
       const next = pool[idx + 1];
-      if (
-        next &&
-        !next.seeking &&
-        Number.isFinite(next.duration) &&
-        next.duration > 0
-      ) {
+      if (next && !next.seeking && Number.isFinite(next.duration) && next.duration > 0) {
         seekLatest(next, idx + 1, 0.04);
       }
     };

@@ -1,21 +1,15 @@
 import { createServerFn } from "@tanstack/react-start";
 import { getSql } from "@/lib/db";
-import { copy } from "@/lib/copy";
+import { parseJoinInput, type JoinInput } from "@/lib/join-schema";
 
+/**
+ * Server function: persist a guild join request.
+ *
+ * Input is validated server-side by `parseJoinInput` (never trust the client),
+ * and written with a tagged-template query so values are always parameterised.
+ */
 export const submitJoin = createServerFn({ method: "POST" })
-  .validator((input: { ign: string; cls: string; note: string }) => {
-    const ign = String(input.ign ?? "")
-      .trim()
-      .slice(0, 24);
-    if (ign.length < 2) {
-      throw new Error(`${copy.ignErrZh} ${copy.ignErrEn}`);
-    }
-    return {
-      ign,
-      cls: String(input.cls ?? "").trim().slice(0, 24),
-      note: String(input.note ?? "").trim().slice(0, 280),
-    };
-  })
+  .validator((input: JoinInput) => parseJoinInput(input))
   .handler(async ({ data }) => {
     const sql = await getSql();
     const id = crypto.randomUUID();

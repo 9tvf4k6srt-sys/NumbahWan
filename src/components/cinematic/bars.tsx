@@ -37,29 +37,11 @@ function MapleBar({
   );
 }
 
-export function VitalBars({
-  hp,
-  mp,
-  hpMax,
-  mpMax,
-  compact = false,
-}: BarsProps) {
+export function VitalBars({ hp, mp, hpMax, mpMax, compact = false }: BarsProps) {
   return (
     <div className="vital-stack" data-vitals="hpmp">
-      <MapleBar
-        kind="hp"
-        label="HP"
-        value={hp}
-        max={hpMax}
-        compact={compact}
-      />
-      <MapleBar
-        kind="mp"
-        label="MP"
-        value={mp}
-        max={mpMax}
-        compact={compact}
-      />
+      <MapleBar kind="hp" label="HP" value={hp} max={hpMax} compact={compact} />
+      <MapleBar kind="mp" label="MP" value={mp} max={mpMax} compact={compact} />
     </div>
   );
 }

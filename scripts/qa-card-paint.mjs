@@ -6,9 +6,7 @@
  */
 import { chromium } from "playwright";
 import { mkdirSync, writeFileSync } from "node:fs";
-import { createRequire } from "node:module";
 
-const require = createRequire(import.meta.url);
 // PIL via a tiny inline python after screenshots
 
 const url = process.argv[2] || "http://127.0.0.1:8080/";

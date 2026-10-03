@@ -32,9 +32,7 @@ export function Loader({ progress }: { progress: number }) {
             }}
           />
         </div>
-        <p className="mt-3 font-display text-xs tracking-wide text-mist tabular-nums">
-          {pct}%
-        </p>
+        <p className="mt-3 font-display text-xs tracking-wide text-mist tabular-nums">{pct}%</p>
       </div>
     </div>
   );
